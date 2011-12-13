@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StoreLocator" Class="Shopper_modelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\StoreLocator.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StoreLocatorConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Badge" Member="Badges">
+    <Type Name="Badge">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Badge_hasBadge" Member="hasBadges" ThisKey="id" OtherKey="badgeID" Type="hasBadge" />
+    </Type>
+  </Table>
+  <Table Name="dbo.visitedStore" Member="visitedStores">
+    <Type Name="visitedStore">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="storeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="totalCheckIns" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Store_visitedStore" Member="Store" ThisKey="storeID" OtherKey="id" Type="Store" IsForeignKey="true" />
+      <Association Name="User_visitedStore" Member="User" ThisKey="userID" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="storeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Store_Comment" Member="Store" ThisKey="storeID" OtherKey="id" Type="Store" IsForeignKey="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="userID" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.hasBadge" Member="hasBadges">
+    <Type Name="hasBadge">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="badgeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Badge_hasBadge" Member="Badge" ThisKey="badgeID" OtherKey="id" Type="Badge" IsForeignKey="true" />
+      <Association Name="User_hasBadge" Member="User" ThisKey="userID" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Store" Member="Stores">
+    <Type Name="Store">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="typeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="latitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="longitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Store_visitedStore" Member="visitedStores" ThisKey="id" OtherKey="storeID" Type="visitedStore" />
+      <Association Name="Store_Comment" Member="Comments" ThisKey="id" OtherKey="storeID" Type="Comment" />
+      <Association Name="Type_Store" Member="Type" ThisKey="typeID" OtherKey="id" Type="Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Type" Member="Types">
+    <Type Name="Type">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Type_Store" Member="Stores" ThisKey="id" OtherKey="typeID" Type="Store" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Association Name="User_visitedStore" Member="visitedStores" ThisKey="id" OtherKey="userID" Type="visitedStore" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="id" OtherKey="userID" Type="Comment" />
+      <Association Name="User_hasBadge" Member="hasBadges" ThisKey="id" OtherKey="userID" Type="hasBadge" />
+    </Type>
+  </Table>
+</Database>
