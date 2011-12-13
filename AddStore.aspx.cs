@@ -12,6 +12,11 @@ public partial class AddShop : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
+            if (Session == null || (string)Session["loggedin"] != "2")
+            {
+                Response.Redirect("default.aspx");
+            }
+            
             BLLtype BLLtype = new BLLtype();
 
             drpType.DataSource = BLLtype.selectAll();
