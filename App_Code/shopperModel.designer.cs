@@ -22,7 +22,7 @@ using System.Reflection;
 
 
 [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="StoreLocator")]
-public partial class Shopper_modelDataContext : System.Data.Linq.DataContext
+public partial class shopperModelDataContext : System.Data.Linq.DataContext
 {
 	
 	private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -52,31 +52,31 @@ public partial class Shopper_modelDataContext : System.Data.Linq.DataContext
   partial void DeleteUser(User instance);
   #endregion
 	
-	public Shopper_modelDataContext() : 
+	public shopperModelDataContext() : 
 			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["StoreLocatorConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public Shopper_modelDataContext(string connection) : 
+	public shopperModelDataContext(string connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public Shopper_modelDataContext(System.Data.IDbConnection connection) : 
+	public shopperModelDataContext(System.Data.IDbConnection connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public Shopper_modelDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+	public shopperModelDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public Shopper_modelDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+	public shopperModelDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
@@ -919,6 +919,10 @@ public partial class Store : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private double _longitude;
 	
+	private string _tag1;
+	
+	private string _tag2;
+	
 	private EntitySet<visitedStore> _visitedStores;
 	
 	private EntitySet<Comment> _Comments;
@@ -941,6 +945,10 @@ public partial class Store : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnlatitudeChanged();
     partial void OnlongitudeChanging(double value);
     partial void OnlongitudeChanged();
+    partial void Ontag1Changing(string value);
+    partial void Ontag1Changed();
+    partial void Ontag2Changing(string value);
+    partial void Ontag2Changed();
     #endregion
 	
 	public Store()
@@ -1071,6 +1079,46 @@ public partial class Store : INotifyPropertyChanging, INotifyPropertyChanged
 				this._longitude = value;
 				this.SendPropertyChanged("longitude");
 				this.OnlongitudeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tag1", DbType="VarChar(50)")]
+	public string tag1
+	{
+		get
+		{
+			return this._tag1;
+		}
+		set
+		{
+			if ((this._tag1 != value))
+			{
+				this.Ontag1Changing(value);
+				this.SendPropertyChanging();
+				this._tag1 = value;
+				this.SendPropertyChanged("tag1");
+				this.Ontag1Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tag2", DbType="VarChar(50)")]
+	public string tag2
+	{
+		get
+		{
+			return this._tag2;
+		}
+		set
+		{
+			if ((this._tag2 != value))
+			{
+				this.Ontag2Changing(value);
+				this.SendPropertyChanging();
+				this._tag2 = value;
+				this.SendPropertyChanged("tag2");
+				this.Ontag2Changed();
 			}
 		}
 	}

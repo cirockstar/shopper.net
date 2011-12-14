@@ -46,6 +46,10 @@
         <label>Type:</label><br /> 
         <asp:DropDownList ID="drpType" runat="server"></asp:DropDownList>
 
+        <label>Tags:</label><br />
+        <input type="text" id="txttag1" runat="server" />
+        <input type="text" id="txttag2" runat="server" />
+
         <label>Current Location:</label><br />
         <input type="hidden" id="hdnLat" runat="server" />
         <input type="hidden" id="hdnLong" runat="server" />
@@ -62,7 +66,7 @@
 
     <div class="two-thirds columns">
         
-        <cc1:GMap ID="addStoreMap" runat="server"  />
+        <cc1:GMap ID="addStoreMap" runat="server" />
 
     </div>
 </asp:Content>
