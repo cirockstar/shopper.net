@@ -15,4 +15,15 @@ public class DALstore
         dc.Stores.InsertOnSubmit(s);
         dc.SubmitChanges();
     }
+
+    public IList<Store> getStoreByType(int typeID)
+    {
+        var result = (from s in dc.Stores
+                      where s.typeID == typeID
+                      select s).ToList();
+
+        return result;
+
+    }
+
 }
