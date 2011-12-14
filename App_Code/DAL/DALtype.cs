@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class DALtype
 {
-    private Shopper_modelDataContext dc = new Shopper_modelDataContext();
+    private shopperModelDataContext dc = new shopperModelDataContext();
 
     public IList<Type> selectAll()
     {

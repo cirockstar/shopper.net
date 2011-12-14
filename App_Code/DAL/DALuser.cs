@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class DALuser
 {
-    private Shopper_modelDataContext dc = new Shopper_modelDataContext();
+    private shopperModelDataContext dc = new shopperModelDataContext();
 
     public User selectUser(User user)
     { 

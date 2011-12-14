@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StoreLocator" Class="Shopper_modelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StoreLocator" Class="shopperModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\StoreLocator.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StoreLocatorConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Badge" Member="Badges">
     <Type Name="Badge">
@@ -45,6 +45,8 @@
       <Column Name="typeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="latitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="longitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="tag1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tag2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Store_visitedStore" Member="visitedStores" ThisKey="id" OtherKey="storeID" Type="visitedStore" />
       <Association Name="Store_Comment" Member="Comments" ThisKey="id" OtherKey="storeID" Type="Comment" />
       <Association Name="Type_Store" Member="Type" ThisKey="typeID" OtherKey="id" Type="Type" IsForeignKey="true" />

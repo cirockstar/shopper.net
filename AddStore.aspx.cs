@@ -64,6 +64,8 @@ public partial class AddShop : System.Web.UI.Page
             s.name = txtName.Value;
             s.city = txtCity.Value;
             s.typeID = Convert.ToInt16(drpType.SelectedValue);
+            s.tag1 = txttag1.Value;
+            s.tag2 = txttag2.Value;
             s.latitude = x;
             s.longitude = y;
             BLLstore.insertStore(s);

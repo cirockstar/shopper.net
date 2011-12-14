@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11" name="shopperModel">
+  <DataContextMoniker Name="/shopperModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="380d8011-2d8a-4ecd-a5fe-7d4eaed77fd9" absoluteBounds="0.75, 7.125, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/shopperModelDataContext/Badge" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54160774-b1ca-4d56-8383-335821ebd9f2" absoluteBounds="0.765, 7.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5aa672ca-c6e8-4a1e-b029-9a794f7bf781" absoluteBounds="3.5, 2.125, 2, 1.26050048828125">
+      <DataClassMoniker Name="/shopperModelDataContext/visitedStore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50b86880-8106-4ba9-a51b-40ba1164e056" absoluteBounds="3.515, 2.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d177544-4362-4cc9-b4b3-386cb97eeca6" absoluteBounds="3.5, 6.875, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/shopperModelDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d8d255a-3ad7-4ec2-b179-4b917f6bf1ba" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2b9e139-e68e-4fb3-bed1-454204d39134" absoluteBounds="3.5, 4.25, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/shopperModelDataContext/hasBadge" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd2762c6-7994-4078-89c9-aca501f45328" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19364c8a-148b-4b58-b65f-d1ac0a8f28bf" absoluteBounds="0.75, 0.75, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/shopperModelDataContext/Store" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8145f97-1d9e-4dec-bfa6-f2752b45448e" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57a01675-5f4c-494a-96df-c44c640bc448" absoluteBounds="1.5, 9.625, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/shopperModelDataContext/Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b17e6cc-6153-4d2a-963f-91486d5d4c7e" absoluteBounds="1.5150000000000001, 10.085, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fdb98452-7960-4ee0-a257-09bf4e7e2fdc" absoluteBounds="0.75, 4.125, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/shopperModelDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc4d9f84-0e50-4a1a-a1ce-8be49e472dda" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 7.125); (3.125 : 6.75); (3.125 : 5.72115315755208); (3.15982443490112 : 5.68632872265096 : JumpStart); (3.37142556509888 : 5.47472759245321 : JumpEnd); (3.5 : 5.34615315755208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/shopperModelDataContext/Badge/Badge_hasBadge" />
+      <nodes>
+        <classShapeMoniker Id="380d8011-2d8a-4ecd-a5fe-7d4eaed77fd9" />
+        <classShapeMoniker Id="e2b9e139-e68e-4fb3-bed1-454204d39134" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.47861857096354); (3.13541666666667 : 2.47861857096354 : JumpStart); (3.30208333333333 : 2.47861857096354 : JumpEnd); (3.5 : 2.47861857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/shopperModelDataContext/Store/Store_visitedStore" />
+      <nodes>
+        <classShapeMoniker Id="19364c8a-148b-4b58-b65f-d1ac0a8f28bf" />
+        <classShapeMoniker Id="5aa672ca-c6e8-4a1e-b029-9a794f7bf781" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.77069768038862); (3.15982443490112 : 3.18052211528974 : JumpStart); (3.27767556509888 : 3.2983732454875 : JumpEnd); (3.3125 : 3.33319768038862); (3.3125 : 7.75177124023438); (3.5 : 7.75177124023438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/shopperModelDataContext/Store/Store_Comment" />
+      <nodes>
+        <classShapeMoniker Id="19364c8a-148b-4b58-b65f-d1ac0a8f28bf" />
+        <classShapeMoniker Id="9d177544-4362-4cc9-b4b3-386cb97eeca6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.21875 : 9.625); (3.21875 : 1.58305678548177); (2.75 : 1.58305678548177)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/shopperModelDataContext/Type/Type_Store" />
+      <nodes>
+        <classShapeMoniker Id="57a01675-5f4c-494a-96df-c44c640bc448" />
+        <classShapeMoniker Id="19364c8a-148b-4b58-b65f-d1ac0a8f28bf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.125); (2.875 : 3.75); (2.875 : 4.01050048828125); (3.15982443490112 : 3.72567605338013 : JumpStart); (3.37142556509888 : 3.51407492318237 : JumpEnd); (3.5 : 3.38550048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/shopperModelDataContext/User/User_visitedStore" />
+      <nodes>
+        <classShapeMoniker Id="fdb98452-7960-4ee0-a257-09bf4e7e2fdc" />
+        <classShapeMoniker Id="5aa672ca-c6e8-4a1e-b029-9a794f7bf781" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.35447178395433); (3.15982443490112 : 5.76429621885545 : JumpStart); (3.37142556509888 : 5.9758973490532 : JumpEnd); (3.40625 : 6.01072178395433); (3.40625 : 7.28213362011719); (3.5 : 7.28213362011719)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/shopperModelDataContext/User/User_Comment" />
+      <nodes>
+        <classShapeMoniker Id="fdb98452-7960-4ee0-a257-09bf4e7e2fdc" />
+        <classShapeMoniker Id="9d177544-4362-4cc9-b4b3-386cb97eeca6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.76682407877604); (3.13541666666667 : 4.76682407877604 : JumpStart); (3.39583333333333 : 4.76682407877604 : JumpEnd); (3.5 : 4.76682407877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/shopperModelDataContext/User/User_hasBadge" />
+      <nodes>
+        <classShapeMoniker Id="fdb98452-7960-4ee0-a257-09bf4e7e2fdc" />
+        <classShapeMoniker Id="e2b9e139-e68e-4fb3-bed1-454204d39134" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

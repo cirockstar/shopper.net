@@ -14,4 +14,14 @@ public class BLLstore
     {
         DALstore.insertStore(s);
     }
+
+    public Store getStore(int storeid)
+    {
+        return DALstore.getStore(storeid);
+    }
+
+    public IList<Comment> getCommentsForStore(int storeid)
+    {
+        return DALstore.getCommentsForStore(storeid);
+    }
 }
