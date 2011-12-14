@@ -14,4 +14,9 @@ public class BLLstore
     {
         DALstore.insertStore(s);
     }
+
+    public IList<Store> getStoreByType(int typeID)
+    {
+        return DALstore.getStoreByType(typeID);
+    }
 }
