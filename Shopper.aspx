@@ -4,9 +4,27 @@
     <title>Shopper.NET - Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" Runat="Server">
-    <div class="sixteen columns">
+    <div class="sixteen columns" style="margin-bottom:40px">
         <p><a href="Logout.aspx" title="Logout" style="float: right">Logout</a></p>
     </div>
+
+    <div class="four columns">
+        <asp:Button ID="BtnNear" runat="server" Text="Find near" Width="200px" />
+    </div>
+     <div class="four columns">
+        <asp:TextBox ID="TxtName" runat="server"></asp:TextBox>
+        <asp:Button ID="BtnName" runat="server" Text="Find store" />
+    </div>
+     <div class="four columns">
+        <asp:TextBox ID="TxtTags" runat="server"></asp:TextBox>
+        <asp:Button ID="BtnTags" runat="server" Text="Find by tags"/>
+    </div>
+     <div class="four columns">
+        <asp:DropDownList ID="DropStoreType" runat="server" Height="30px"></asp:DropDownList>
+        <asp:Button ID="BtnType" runat="server" Text="Find by type" 
+             onclick="BtnType_Click" /><br />
+    </div>
+
 
 
 </asp:Content>

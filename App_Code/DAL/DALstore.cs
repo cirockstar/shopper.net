@@ -16,6 +16,7 @@ public class DALstore
         dc.SubmitChanges();
     }
 
+<<<<<<< HEAD
     public Store getStore(int storeid)
     {
         var result = (from s in dc.Stores
@@ -36,3 +37,16 @@ public class DALstore
         return result;
     }
 }
+=======
+    public IList<Store> getStoreByType(int typeID)
+    {
+        var result = (from s in dc.Stores
+                      where s.typeID == typeID
+                      select s).ToList();
+
+        return result;
+
+    }
+
+}
+>>>>>>> 11501a17b455cf8fe3c96cd7199a6b5a32af6713
