@@ -15,7 +15,6 @@ public class BLLstore
         DALstore.insertStore(s);
     }
 
-<<<<<<< HEAD
     public Store getStore(int storeid)
     {
         return DALstore.getStore(storeid);
@@ -24,10 +23,9 @@ public class BLLstore
     public IList<Comment> getCommentsForStore(int storeid)
     {
         return DALstore.getCommentsForStore(storeid);
-=======
+    }
     public IList<Store> getStoreByType(int typeID)
     {
         return DALstore.getStoreByType(typeID);
->>>>>>> 11501a17b455cf8fe3c96cd7199a6b5a32af6713
     }
 }
