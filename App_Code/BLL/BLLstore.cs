@@ -28,4 +28,14 @@ public class BLLstore
     {
         return DALstore.getStoreByType(typeID);
     }
+
+    public IList<Store> getStoreByName(string store)
+    {
+        return DALstore.getStoreByName(store);
+    }
+
+    public IList<Store> getStoreByTag(string store)
+    {
+        return DALstore.getStoreByTag(store);
+    }
 }

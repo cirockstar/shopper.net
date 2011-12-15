@@ -13,11 +13,13 @@
     </div>
      <div class="four columns">
         <asp:TextBox ID="TxtName" runat="server"></asp:TextBox>
-        <asp:Button ID="BtnName" runat="server" Text="Find store" />
+        <asp:Button ID="BtnName" runat="server" Text="Find store" 
+             onclick="BtnName_Click" />
     </div>
      <div class="four columns">
         <asp:TextBox ID="TxtTags" runat="server"></asp:TextBox>
-        <asp:Button ID="BtnTags" runat="server" Text="Find by tags"/>
+        <asp:Button ID="BtnTags" runat="server" Text="Find by tags" 
+             onclick="BtnTags_Click"/>
     </div>
      <div class="four columns">
         <asp:DropDownList ID="DropStoreType" runat="server" Height="30px"></asp:DropDownList>

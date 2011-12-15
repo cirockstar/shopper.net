@@ -46,4 +46,21 @@ public class DALstore
 
     }
 
+
+    public IList<Store> getStoreByName(string store)
+    {
+        var result = (from s in dc.Stores
+                      where s.name == store
+                      select s).ToList();
+
+        return result;
+    }
+
+    public IList<Store> getStoreByTag(string store)
+    {
+        var result = (from s in dc.Stores
+                      where s.tag1 == store || s.tag2 == store
+                      select s).ToList();
+        return result;
+    }
 }

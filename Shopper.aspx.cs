@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 public partial class Shopper : System.Web.UI.Page
 {
     public IList<Store> stores;
+    private BLLstore BLLstore = new BLLstore();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -29,9 +30,16 @@ public partial class Shopper : System.Web.UI.Page
     
     protected void BtnType_Click(object sender, EventArgs e)
     {
-        
-            BLLstore BLLstore = new BLLstore();
-            stores = BLLstore.getStoreByType(Convert.ToInt16(DropStoreType.SelectedValue));
-     }
-        
+        stores = BLLstore.getStoreByType(Convert.ToInt16(DropStoreType.SelectedValue));
+    }
+
+    protected void BtnName_Click(object sender, EventArgs e)
+    {
+        stores = BLLstore.getStoreByName(TxtName.Text);
+    }
+
+    protected void BtnTags_Click(object sender, EventArgs e)
+    {
+        stores = BLLstore.getStoreByTag(TxtTags.Text);
+    }
 }
