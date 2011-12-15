@@ -40,6 +40,7 @@ public class DALstore
     {
         var result = (from s in dc.Stores
                       where s.typeID == typeID
+                      join t in dc.Types on s.typeID equals t.id
                       select s).ToList();
 
         return result;

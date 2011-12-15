@@ -5,7 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" Runat="Server">
     <div class="sixteen columns" style="margin-bottom:40px">
-        <p><a href="Logout.aspx" title="Logout" style="float: right">Logout</a></p>
+        <p style="float: right">
+            <a href="AddStore.aspx" title="AddStore" >Add Store</a>
+            <a href="Logout.aspx" title="Logout">Logout</a></p>
     </div>
 
     <div class="four columns">
@@ -26,7 +28,22 @@
         <asp:Button ID="BtnType" runat="server" Text="Find by type" 
              onclick="BtnType_Click" /><br />
     </div>
-
+    <hr />
+    <div class="sixteen columns">
+        <h1>Search Results</h1>
+    </div>
+    <asp:Repeater ID="rptSearchResults" runat="server">
+     
+        <ItemTemplate>
+            <div class="four columns">
+                <h3><%# DataBinder.Eval(Container.DataItem, "name") %></h3>
+                <em><%# DataBinder.Eval(Container.DataItem, "city") %> -
+                    <%# DataBinder.Eval(Container.DataItem, "Type.name") %></em><br />
+                <a href="ViewStore.aspx?storeid=<%# DataBinder.Eval(Container.DataItem, "id") %>"
+                    title="View store">Show details</a>
+             </div>
+        </ItemTemplate>
+    </asp:Repeater> 
 
 
 </asp:Content>

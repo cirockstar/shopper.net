@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class Shopper : System.Web.UI.Page
 {
-    public IList<Store> stores;
+    public IList<Store> searchResults;
     private BLLstore BLLstore = new BLLstore();
 
     protected void Page_Load(object sender, EventArgs e)
@@ -30,16 +30,25 @@ public partial class Shopper : System.Web.UI.Page
     
     protected void BtnType_Click(object sender, EventArgs e)
     {
-        stores = BLLstore.getStoreByType(Convert.ToInt16(DropStoreType.SelectedValue));
+        searchResults = BLLstore.getStoreByType(Convert.ToInt16(DropStoreType.SelectedValue));
+        bindSearchResults(searchResults);
     }
 
     protected void BtnName_Click(object sender, EventArgs e)
     {
-        stores = BLLstore.getStoreByName(TxtName.Text);
+        searchResults = BLLstore.getStoreByName(TxtName.Text);
+        bindSearchResults(searchResults);
     }
 
     protected void BtnTags_Click(object sender, EventArgs e)
     {
-        stores = BLLstore.getStoreByTag(TxtTags.Text);
+        searchResults = BLLstore.getStoreByTag(TxtTags.Text);
+        bindSearchResults(searchResults);
+    }
+
+    private void bindSearchResults(IList<Store> searchResults)
+    {
+        rptSearchResults.DataSource = searchResults;
+        rptSearchResults.DataBind();
     }
 }
